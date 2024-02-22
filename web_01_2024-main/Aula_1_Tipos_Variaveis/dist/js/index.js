@@ -1,6 +1,6 @@
 "use strict";
 // Tipo number para números
-let idade = 25;
+let idade = 25; 
 let altura = 1.75;
 // Tipo string para texto
 let nome = "João";
