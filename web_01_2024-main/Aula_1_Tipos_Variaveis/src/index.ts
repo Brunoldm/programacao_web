@@ -1,5 +1,6 @@
-// Tipo number para números
+// Tipo number para números 
 let idade: number = 25;
+let idade01: number = 30;
 let altura: number = 1.75;
 
 // Tipo string para texto
