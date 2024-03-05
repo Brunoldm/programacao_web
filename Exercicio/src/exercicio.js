@@ -42,15 +42,75 @@ Exercício 3
 Implemente uma função que calcule a média aritmética de um array de números
 e retorne o resultado. Utilize essa função para calcular a média de diferentes
 conjuntos de números.
-*/
-function media(valores) {
-    var soma = 0;
-    for (var i = 0; i < valores.length; i++) {
-        soma += valores[i];
-    }
-    var resultadodamedia = soma / valores.length;
+
+
+function media(valores: number[]): number{
+    
+    let soma = 0;
+
+        for (let i = 0; i < valores.length; i++) {
+            
+            soma += valores[i];
+        }
+        
+     let resultadodamedia = soma/valores.length;
+
     return resultadodamedia;
-}
-var notas = [5, 7, 9, 10, 8, 3];
-var resultado = media(notas);
+    }
+
+let notas: number[] = [5 , 7 , 9 , 10 , 8 , 3];
+let resultado = media(notas);
 console.log('O resultado da média é:', resultado);
+
+*/
+/*
+Exercício 4
+
+Crie uma função que receba uma string como parâmetro e retorne a mesma
+string com todas as letras em caixa alta. Utilize essa função para converter
+diferentes strings.
+
+
+function converterparamaiuscula(texto: string): string {
+
+    return texto.toUpperCase();
+
+}
+
+console.log(converterparamaiuscula("Valeu professor"));
+*/
+/*
+Exercício 5
+
+Desenvolva uma função que determine se um número é primo ou não. Retorne
+true se for primo e false se não for.
+
+
+function primo(numero: number): boolean{
+
+    if (numero <= 1){
+        return false;
+    }
+        for(let i = 2; i <= Math.sqrt(numero); i++){
+        
+        if (numero % i === 0){
+
+            return false;
+        }
+    }
+        return true;
+}
+
+console.log(primo(7));
+*/
+/*
+Exercício 6
+
+Implemente uma função que inverta a ordem dos elementos em um array.
+Utilize essa função para inverter a ordem de diferentes conjuntos de elementos.
+*/
+function inverterArray(array) {
+    return array.reverse();
+}
+var array1 = ['B', 'E', 'X', 'I', 'G', 'A'];
+console.log(inverterArray(array1));
