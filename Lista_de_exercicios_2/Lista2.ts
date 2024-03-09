@@ -73,7 +73,7 @@ evite divisões por zero.
 ◦ Getters e Setters
 Certifique-se de que a classe lida corretamente com situações de erro, como a divisão por zero.
 Teste todos os métodos.
-*/
+
 
 class Calculadora{
 
@@ -84,9 +84,93 @@ class Calculadora{
     this.valor01 = valor01;
     this.valor02 = valor02;
   }
-  soma(): number {
+  Soma(): number {
     let resultado = this.valor01+this.valor02;
     return resultado;
   }
+  Subtração(): number {
+    let resultado = this.valor01-this.valor02;
+    return resultado;
+  }
+  Multiplicacao(): number {
+    let resultado = this.valor01*this.valor02;
+    return resultado;
+  }
+  Divisao(): number {
+    if (this.valor02 === 0) {
+      throw new Error("Divisão por zero não é permitida.");
+  }
+    let resultado = this.valor01/this.valor02;
+    return resultado;
+  }
+  Porcetagem(): number {
+    let resultado = (this.valor01*100)/this.valor02;
+    return resultado;
+  }
+  get getValor01(): number{
+    return this.valor01;
+  }
+  
+  set setValor01(valor01: number) {
+    this.valor01 = valor01;
+  }
+  get getValor02(): number{
+    return this.valor02;
+  }
+  
+  set setValor02(valor02: number) {
+    this.valor02 = valor02;
+  }
+}
 
+const Calculo01 = new Calculadora(10,5);
+let soma01: number = Calculo01.Soma();
+console.log(soma01);
+*/
+/*
+03 – Desenvolva uma classe Produto em TypeScript
+
+Crie uma classe Produto que represente um item disponível em um catálogo de uma loja virtual. A
+classe deve ter as seguintes características:
+
+Atributos:
+• nome: uma string que representa o nome do produto.
+• preco: um número que representa o preço do produto.
+• quantidadeEmEstoque: um número inteiro que indica a quantidade disponível em estoque do
+produto.
+Construtor:
+
+• Deve aceitar três parâmetros: nome, preco e quantidadeEmEstoque, e atribuí-los aos
+respectivos atributos da classe.
+Métodos:
+
+• calcularValorTotalEmEstoque(): retorna o valor total em estoque do produto, calculado
+multiplicando o preço pelo quantidade em estoque.
+• reporEstoque(quantidade: number): adiciona a quantidade especificada ao estoque do
+produto.
+• vender(quantidade: number): remove a quantidade especificada do estoque do produto. Se a
+quantidade desejada for maior do que a disponível em estoque, deve ser lançado um erro
+indicando que não há estoque suficiente.
+• Getters e Setters
+Certifique-se de que a classe lida corretamente com situações de erro, como tentar vender mais
+produtos do que há em estoque. Teste todos os métodos.
+*/
+
+class produto{
+  
+  private nome: string;
+  private preco: number;
+  private quantidadeEmEstoque: number;
+
+  constructor(nome: string, preco: number, quantidadeEmEstoque: number){
+    this.nome = nome;
+    this.preco = preco;
+    this.quantidadeEmEstoque = quantidadeEmEstoque;
+  }
+
+  calcularValorTotalEmEstoque(): number {
+    let resultado = this.preco*this.quantidadeEmEstoque;
+    return resultado;
+  }
+  
 }
